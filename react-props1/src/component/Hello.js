@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-export default function Hello(age) {
+export default function Hello(props) {
     const [name, setName] = useState('Mike');
+    const [age, setAge] = useState(props.age);
 
     return (
     <div>
@@ -11,6 +12,7 @@ export default function Hello(age) {
         <button onClick={() => {
             console.log(name)
             setName(name === "Mike" ? "Jane" : "Mike");
+            setAge(age + 1);
         }}> 
             Change
         </button>

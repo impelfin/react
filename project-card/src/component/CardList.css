@@ -1,0 +1,13 @@
+.cardList {
+    display: flex;
+    background-color: aqua;
+}
+
+.card {
+    margin: 50px;
+    width: 300px;
+    hight: 500px;
+    border: 1px solid black;
+    text-align:center;
+    background-color: orange;
+}

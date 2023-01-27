@@ -79,20 +79,6 @@
       "id": 8
     },
     {
-      "day": "4",
-      "eng": "Apple",
-      "kor": "사과",
-      "isDone": false,
-      "id": 9
-    },
-    {
-      "day": "4",
-      "eng": "Computer",
-      "kor": "컴퓨터",
-      "isDone": false,
-      "id": 10
-    },
-    {
       "day": "1",
       "eng": "Mouse",
       "kor": "쥐",
@@ -100,11 +86,18 @@
       "id": 11
     },
     {
-      "day": "5",
-      "eng": "Monkey",
-      "kor": "원숭이",
+      "day": "4",
+      "eng": "Computer",
+      "kor": "컴퓨터",
       "isDone": false,
       "id": 12
+    },
+    {
+      "day": "5",
+      "eng": "Network",
+      "kor": "네트워크",
+      "isDone": false,
+      "id": 13
     }
   ]
 }

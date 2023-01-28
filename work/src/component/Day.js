@@ -5,14 +5,20 @@ import { Link } from 'react-router-dom';
 
 export default function Day() {
   const { day } = useParams();
+  const days = useFetch('http://localhost:3001/days');
 
   const words = useFetch(`http://localhost:3001/words?day=${day}`);
 
-  if (day === 1) var prev_day = 1;
-  if (day === day.length) var next_day = day.length;
-
-  prev_day = Number(day) - 1;
-  next_day = Number(day) + 1;
+  if (Number(day) === 1) {
+    var prev_day = 1;
+    var next_day = 2;
+  } else if (Number(day) === days.length) {
+    prev_day = Number(day) - 1;
+    next_day = Number(day);
+  } else {
+    prev_day = Number(day) - 1;
+    next_day = Number(day) + 1;
+  }
 
   return (
     <>
@@ -25,8 +31,18 @@ export default function Day() {
           ))}
         </tbody>
       </table>
-      <Link to={`/day/${prev_day}`}>Previous Day</Link>
-      <Link to={`/day/${next_day}`}>Next Day</Link>
+      <div className="day_mv_div">
+        <div className="menu">
+          <ul className="day_mv">
+            <li>
+              <Link to={`/day/${prev_day}`}> ◀️ </Link>
+            </li>
+            <li>
+              <Link to={`/day/${next_day}`}> ▶️ </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 }

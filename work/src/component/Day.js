@@ -8,6 +8,12 @@ export default function Day() {
 
   const words = useFetch(`http://localhost:3001/words?day=${day}`);
 
+  if (day === 1) var prev_day = 1;
+  if (day === day.length) var next_day = day.length;
+
+  prev_day = Number(day) - 1;
+  next_day = Number(day) + 1;
+
   return (
     <>
       <h2>Day {day}</h2>
@@ -19,17 +25,8 @@ export default function Day() {
           ))}
         </tbody>
       </table>
-      <button onClick={() => {
-        
-           }
-        }> 
-        
-        
-        Previous Day </button>
-      <button onClick={() => {
-        
-      }
-   }> Next Day </button>
+      <Link to={`/day/${prev_day}`}>Previous Day</Link>
+      <Link to={`/day/${next_day}`}>Next Day</Link>
     </>
   );
 }

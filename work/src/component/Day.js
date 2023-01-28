@@ -8,18 +8,6 @@ export default function Day() {
 
   const words = useFetch(`http://localhost:3001/words?day=${day}`);
 
-  function pre_day_move() {
-    let prev_day = Number(day) - 1;
-    console.log(prev_day);
-    <Link to={`/day/${prev_day}`}></Link>;
-  }
-
-  function next_day_move() {
-    let next_day = Number(day) + 1;
-    console.log(next_day);
-    <Link to={`/day/${next_day}`}></Link>;
-  }
-
   return (
     <>
       <h2>Day {day}</h2>
@@ -31,8 +19,17 @@ export default function Day() {
           ))}
         </tbody>
       </table>
-      <button onClick={pre_day_move}> Previous Day </button>
-      <button onClick={next_day_move}> Next Day </button>
+      <button onClick={() => {
+        
+           }
+        }> 
+        
+        
+        Previous Day </button>
+      <button onClick={() => {
+        
+      }
+   }> Next Day </button>
     </>
   );
 }
